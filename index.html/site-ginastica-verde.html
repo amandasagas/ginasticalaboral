@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ginástica Laboral – Produto do Projeto</title>
+  <style>
+    :root{
+      --bg:#000000;
+      --card:#111111;
+      --text:#ffffff;
+      --muted:#cccccc;
+      --accent:#00FF84;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
+      background:var(--bg);color:var(--text)}
+    a{color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    .nav{position:sticky;top:0;backdrop-filter:blur(6px);background:#000000dd;border-bottom:1px solid var(--accent);z-index:10}
+    .row{display:flex;gap:12px;align-items:center}
+    .space{flex:1}
+    .brand{font-weight:700;letter-spacing:.3px;color:var(--accent)}
+    .badge{background:#000;border:1px solid var(--accent);color:var(--accent);padding:4px 10px;border-radius:999px;font-size:12px}
+    .btn{background:var(--accent);border:none;border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer;color:#000}
+    .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+    .grid{display:grid;gap:16px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--accent);border-radius:16px;box-shadow:0 0 15px #000}
+    .card .header{padding:14px 16px;border-bottom:1px solid var(--accent);font-weight:700;color:var(--accent)}
+    .card .content{padding:16px}
+    .muted{color:var(--muted)}
+    .small{font-size:13px} .xs{font-size:12px}
+    .hero h1{font-size:34px;margin:0 0 8px;color:var(--accent)}
+    .chip{display:inline-block;border:1px solid var(--accent);padding:6px 10px;border-radius:999px;font-size:12px;margin:3px;color:var(--accent)}
+    .progress{width:100%;height:8px;background:#222;border-radius:999px;overflow:hidden;border:1px solid var(--accent)}
+    .bar{height:100%;width:0;background:var(--accent);transition:.2s}
+    .search input{width:240px;max-width:56vw;padding:10px 12px;border-radius:12px;border:1px solid var(--accent);background:#000;color:var(--text)}
+    .check label{display:flex;gap:8px;align-items:center;margin:8px 0}
+    .footer{border-top:1px solid var(--accent);margin-top:24px;padding:20px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="container row" style="padding:10px 24px">
+      <div class="row" style="gap:10px"><div class="brand">Ginástica Laboral</div></div>
+      <div class="space"></div>
+      <div class="search">
+        <input id="q" placeholder="Buscar exercício..." />
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="hero grid grid-2" style="align-items:center;min-height:40vh">
+      <div>
+        <h1>Prevenção e alívio de dores no trabalho</h1>
+        <p class="muted">Exercícios simples, dicas de postura e autocuidado para jovens trabalhadores que passam longas jornadas sentados.</p>
+        <div class="row" style="gap:8px;margin-top:10px">
+          <a href="#planos"><button class="btn">Começar agora</button></a>
+          <a href="#exercicios"><button class="btn ghost">Ver exercícios</button></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="planos" class="grid grid-2">
+      <div class="card">
+        <div class="header">Plano Rápido – 5 minutos</div>
+        <div class="content small muted">
+          <ul>
+            <li>Rotação de Ombros (1 min)</li>
+            <li>Mobilidade Cervical (1 min)</li>
+            <li>Alongamento Lombar (2 min)</li>
+            <li>Respiração guiada (1 min)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="header">Plano Essencial – 10 minutos</div>
+        <div class="content small muted">
+          <ul>
+            <li>Rotação de Ombros (2 min)</li>
+            <li>Mobilidade de Punhos (2 min)</li>
+            <li>Cervical (2 min)</li>
+            <li>Quadril (2 min)</li>
+            <li>Respiração (2 min)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <h2 id="exercicios" style="margin:28px 0 12px;color:#00FF84">Exercícios guiados</h2>
+    <section class="grid grid-3" id="cards"></section>
+
+    <h2 style="margin:28px 0 12px;color:#00FF84">Postura & Autocuidado</h2>
+    <section class="grid grid-2">
+      <div class="card">
+        <div class="header">Dicas essenciais</div>
+        <div class="content small">
+          <div><span class="chip">Altura da cadeira</span> <span class="muted">Joelhos ~90° e pés no chão.</span></div>
+          <div><span class="chip">Tela</span> <span class="muted">Topo da tela na linha dos olhos.</span></div>
+          <div><span class="chip">Pausas ativas</span> <span class="muted">A cada 50–60 min, 3–5 min de mobilidade.</span></div>
+          <div><span class="chip">Respiração</span> <span class="muted">2 min de respiração nasal profunda.</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="header">Checklist rápido</div>
+        <div class="content small check">
+          <label><input type="checkbox"> Fiz uma pausa ativa na última hora</label>
+          <label><input type="checkbox"> Ajustei a altura da cadeira</label>
+          <label><input type="checkbox"> Alonguei cervical e ombros</label>
+          <label><input type="checkbox"> Fiz 2 min de respiração profunda</label>
+        </div>
+      </div>
+    </section>
+
+    <h2 style="margin:28px 0 12px;color:#00FF84">Sobre o projeto</h2>
+    <section class="grid">
+      <div class="card">
+        <div class="content small">
+          <p class="muted">Produto educacional do projeto para jovens trabalhadores (18–29) com jornada de 8h. Intervenção: 4 encontros de 30 min com alongamentos, compensação postural e relaxamento.</p>
+          <div class="xs muted">Avaliações: Dinamômetro palmar • Teste de Thomas • Testes de ombro • Estabilidade unipodal</div>
+          <div class="xs muted">Objetivos: Reduzir dores • Melhorar flexibilidade • Força de preensão • Hábitos ativos</div>
+          <div class="xs muted">Referência: Cartilha de Ginástica Laboral – UFDPar (2023)</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer xs muted">Desenvolvido pelo grupo • Projeto de Ginástica Laboral • 2025</div>
+  </div>
+
+  <script>
+    const EXERCISES = [
+      { id:'cervical', title:'Mobilidade Cervical', area:'Cervical', duration:30, steps:[
+        'Sente-se ereto(a), ombros relaxados.',
+        'Incline a cabeça para a direita por 15s.',
+        'Repita para a esquerda por 15s.'
+      ], benefits:['Alivia tensão no pescoço','Reduz dores cervicais']},
+      { id:'ombros', title:'Rotação de Ombros', area:'Ombros', duration:40, steps:[
+        'Eleve os ombros em direção às orelhas.',
+        'Faça 10 rotações para trás e 10 para frente.'
+      ], benefits:['Melhora mobilidade do ombro','Diminui rigidez']},
+      { id:'lombar', title:'Alongamento Lombar em Pé', area:'Lombar', duration:45, steps:[
+        'Em pé, mãos na lombar.',
+        'Leve o quadril para frente e abra o peito por 15s.',
+        'Volte ao neutro e repita 3 vezes.'
+      ], benefits:['Descompressão lombar','Melhora postura']},
+      { id:'punho', title:'Mobilidade de Punhos', area:'Membros Superiores', duration:30, steps:[
+        'Estenda o braço à frente, palma para cima.',
+        'Puxe suavemente os dedos com a outra mão por 15s.',
+        'Troque o lado por 15s.'
+      ], benefits:['Reduz tensão de digitação','Previne dor no punho']},
+      { id:'quadril', title:'Abertura de Quadril', area:'Quadril', duration:45, steps:[
+        'Em pé, segure em apoio estável.',
+        'Leve o calcanhar ao glúteo e mantenha 20s cada perna.',
+        'Evite compensar a lombar.'
+      ], benefits:['Melhora flexibilidade do quadril','Diminui sobrecarga lombar']},
+    ];
+
+    const cards = document.getElementById('cards');
+    const q = document.getElementById('q');
+
+    function render(list){
+      cards.innerHTML = '';
+      list.forEach(ex => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="header">${ex.title} <span class="xs muted" style="float:right">${ex.area}</span></div>
+          <div class="content">
+            <ul class="small muted" style="margin-top:0; padding-left:18px">${ex.steps.map(s=>`<li>${s}</li>`).join('')}</ul>
+            <div class="xs" style="margin:6px 0">${ex.benefits.map(b=>`<span class="chip">${b}</span>`).join(' ')}</div>
+            <div class="progress"><div class="bar" id="bar-${ex.id}"></div></div>
+            <div class="row" style="gap:8px; margin-top:10px">
+              <button class="btn" id="play-${ex.id}">Iniciar</button>
+              <button class="btn ghost" id="reset-${ex.id}">Reiniciar</button>
+              <div class="xs muted"><span id="time-${ex.id}">${ex.duration}</span>s</div>
+            </div>
+          </div>
+        `;
+        cards.appendChild(card);
+
+        let running=false, timeLeft=ex.duration, timer=null;
+        const playBtn = card.querySelector('#play-'+ex.id);
+        const resetBtn = card.querySelector('#reset-'+ex.id);
+        const timeEl = card.querySelector('#time-'+ex.id);
+        const barEl = card.querySelector('#bar-'+ex.id);
+
+        function tick(){
+          timeLeft = Math.max(0, timeLeft-1);
+          timeEl.textContent = timeLeft;
+          const pct = 100 * (ex.duration - timeLeft) / ex.duration;
+          barEl.style.width = pct + '%';
+          if(timeLeft===0){ stop(); playBtn.textContent='Iniciar'; }
+        }
+        function start(){
+          if(running) return;
+          running=true;
+          playBtn.textContent='Pausar';
+          timer=setInterval(tick,1000);
+        }
+        function pause(){
+          running=false;
+          clearInterval(timer);
+          timer=null;
+          playBtn.textContent='Iniciar';
+        }
+        function stop(){ pause(); }
+        function reset(){
+          pause();
+          timeLeft=ex.duration;
+          timeEl.textContent=timeLeft;
+          barEl.style.width='0%';
+        }
+
+        playBtn.addEventListener('click', ()=> running? pause(): start());
+        resetBtn.addEventListener('click', reset);
+      });
+    }
+
+    render(EXERCISES);
+
+    q.addEventListener('input', ()=>{
+      const term = q.value.toLowerCase();
+      const filtered = EXERCISES.filter(e => (e.title+e.area).toLowerCase().includes(term));
+      render(filtered);
+    });
+  </script>
+</body>
+</html>
